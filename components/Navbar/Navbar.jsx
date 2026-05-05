@@ -100,7 +100,7 @@ const sharedTransition = {
 };
 function Navbar() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-5">
       <motion.nav
         className="p-2 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-lg border border-gray-200/80 dark:border-gray-800/80 shadow-lg dark:shadow-gray-900/20 relative overflow-hidden"
         initial="initial"

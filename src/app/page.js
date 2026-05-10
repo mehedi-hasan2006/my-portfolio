@@ -1,4 +1,4 @@
-import About from "../../components/About/About";
+import About from "../../components/About/AboutMe";
 import GithubInfo from "../../components/GithubInfo/GithubInfo";
 import Hero from "../../components/Hero/Hero";
 

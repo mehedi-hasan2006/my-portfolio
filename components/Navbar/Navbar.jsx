@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Home, Settings, Bell, User } from "lucide-react";
+import { Home, Settings, Bell, User, CircleUser } from "lucide-react";
 import { div } from "motion/react-client";
 const menuItems = [
   {
@@ -14,8 +14,8 @@ const menuItems = [
     iconColor: "group-hover:text-blue-500 dark:group-hover:text-blue-400",
   },
   {
-    icon: <Bell className="h-5 w-5" />,
-    label: "Notifications",
+    icon: <CircleUser className="h-5 w-5" />,
+    label: "About",
     href: "#",
     gradient:
       "radial-gradient(circle, rgba(249,115,22,0.15) 0%, rgba(234,88,12,0.06) 50%, rgba(194,65,12,0) 100%)",

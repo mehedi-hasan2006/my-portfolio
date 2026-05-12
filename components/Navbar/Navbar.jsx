@@ -2,7 +2,15 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Home, Settings, Bell, User, CircleUser } from "lucide-react";
+import {
+  Home,
+  Settings,
+  Bell,
+  User,
+  CircleUser,
+  GraduationCap,
+  Layers, CodeXml 
+} from "lucide-react";
 import { div } from "motion/react-client";
 const menuItems = [
   {
@@ -22,7 +30,23 @@ const menuItems = [
     iconColor: "group-hover:text-orange-500 dark:group-hover:text-orange-400",
   },
   {
-    icon: <Settings className="h-5 w-5" />,
+    icon: <CodeXml  className="h-5 w-5" />,
+    label: "Skills",
+    href: "#skills",
+    gradient:
+      "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(220,38,38,0.06) 50%, rgba(185,28,28,0) 100%)",
+    iconColor: "group-hover:text-red-500 dark:group-hover:text-red-400",
+  },
+  {
+    icon: <Layers className="h-5 w-5" />,
+    label: "Projects",
+    href: "#projects",
+    gradient:
+      "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(220,38,38,0.06) 50%, rgba(185,28,28,0) 100%)",
+    iconColor: "group-hover:text-pink-500 dark:group-hover:text-pink-400",
+  },
+  {
+    icon: <GraduationCap className="h-5 w-5" />,
     label: "Education",
     href: "#education",
     gradient:
@@ -30,12 +54,12 @@ const menuItems = [
     iconColor: "group-hover:text-green-500 dark:group-hover:text-green-400",
   },
   {
-    icon: <User className="h-5 w-5" />,
-    label: "Skills",
-    href: "#skills",
+    icon: <Settings className="h-5 w-5" />,
+    label: "Contact",
+    href: "#contact",
     gradient:
-      "radial-gradient(circle, rgba(239,68,68,0.15) 0%, rgba(220,38,38,0.06) 50%, rgba(185,28,28,0) 100%)",
-    iconColor: "group-hover:text-red-500 dark:group-hover:text-red-400",
+      "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(22,163,74,0.06) 50%, rgba(21,128,61,0) 100%)",
+    iconColor: "group-hover:text-cyan-500 dark:group-hover:text-cyan-400",
   },
 ];
 const itemVariants = {
@@ -100,7 +124,7 @@ const sharedTransition = {
 };
 function Navbar() {
   return (
-    <div className="container mx-auto my-5 sticky top-5 z-50" >
+    <div className="container mx-auto my-5 sticky top-5 z-50">
       <motion.nav
         className="p-2 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-lg border border-gray-200/80 dark:border-gray-800/80 shadow-lg dark:shadow-gray-900/20 relative overflow-hidden"
         initial="initial"

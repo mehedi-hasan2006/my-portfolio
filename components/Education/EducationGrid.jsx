@@ -54,11 +54,7 @@ const educationData = [
     bgColor: "from-rose-500/10 to-pink-500/10",
     borderColor: "border-rose-500/30",
     icon: GraduationCap,
-    highlights: [
-      "Economics Research",
-      "Data Analysis",
-      "Academic Excellence",
-    ],
+    highlights: ["Economics Research", "Data Analysis", "Academic Excellence"],
     description:
       "Studying economics alongside tech education for data-driven development approach.",
     progress: 30,
@@ -141,7 +137,11 @@ const cardVariants = {
 
 const highlightVariants = {
   hidden: { opacity: 0, scale: 0 },
-  visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 200 } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 200 },
+  },
 };
 
 export default function EducationGrid() {
@@ -154,7 +154,10 @@ export default function EducationGrid() {
       : educationData.filter((item) => item.type.toLowerCase() === filter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-16 px-4 relative overflow-hidden">
+    <div
+      id="education"
+      className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-16 px-4 relative overflow-hidden"
+    >
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -219,7 +222,7 @@ export default function EducationGrid() {
                 >
                   {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
                 </motion.button>
-              )
+              ),
             )}
           </div>
         </motion.div>
@@ -232,10 +235,30 @@ export default function EducationGrid() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
           {[
-            { icon: BookOpen, label: "Qualifications", value: "5", color: "text-blue-500" },
-            { icon: Award, label: "Certifications", value: "3+", color: "text-purple-500" },
-            { icon: Star, label: "GPA Average", value: "4.8+", color: "text-yellow-500" },
-            { icon: Globe, label: "Skills", value: "10+", color: "text-green-500" },
+            {
+              icon: BookOpen,
+              label: "Qualifications",
+              value: "5",
+              color: "text-blue-500",
+            },
+            {
+              icon: Award,
+              label: "Certifications",
+              value: "3+",
+              color: "text-purple-500",
+            },
+            {
+              icon: Star,
+              label: "GPA Average",
+              value: "4.8+",
+              color: "text-yellow-500",
+            },
+            {
+              icon: Globe,
+              label: "Skills",
+              value: "10+",
+              color: "text-green-500",
+            },
           ].map((stat, index) => {
             const IconComponent = stat.icon;
             return (
@@ -244,7 +267,9 @@ export default function EducationGrid() {
                 whileHover={{ scale: 1.05, y: -3 }}
                 className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-center shadow-lg"
               >
-                <IconComponent className={`w-6 h-6 mx-auto mb-2 ${stat.color}`} />
+                <IconComponent
+                  className={`w-6 h-6 mx-auto mb-2 ${stat.color}`}
+                />
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">
                   {stat.value}
                 </div>
@@ -273,7 +298,9 @@ export default function EducationGrid() {
                   variants={cardVariants}
                   whileHover="hover"
                   layout
-                  onClick={() => setSelectedCard(selectedCard === item.id ? null : item.id)}
+                  onClick={() =>
+                    setSelectedCard(selectedCard === item.id ? null : item.id)
+                  }
                   className={`group relative bg-white dark:bg-gray-900 rounded-2xl p-6 border-2 ${item.borderColor} shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden`}
                 >
                   {/* Background Gradient */}
@@ -340,8 +367,8 @@ export default function EducationGrid() {
                               item.type === "Current"
                                 ? "bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-800 animate-pulse"
                                 : item.type === "Certification"
-                                ? "bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300 dark:border-orange-800"
-                                : "bg-green-100 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800"
+                                  ? "bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300 dark:border-orange-800"
+                                  : "bg-green-100 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800"
                             }`}
                           >
                             <span className="flex items-center gap-1">

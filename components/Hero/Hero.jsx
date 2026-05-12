@@ -58,6 +58,7 @@ const CoderProfileCard = () => {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
       className="w-full max-w-2xl mx-auto"
+      id="home"
     >
       <div className="relative group">
         {/* Glow Effect */}

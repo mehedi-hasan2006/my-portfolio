@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -137,6 +136,7 @@ export default function AboutMe() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       className="mx-auto container px-4 py-16 lg:py-14"
+      id="about"
     >
       {/* Section Header */}
       <motion.div variants={itemVariants} className="text-center mb-12">

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { MdContactPhone } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../../public/logo.png";
 import {
   Home,
   CircleUser,
@@ -11,6 +12,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import Image from "next/image";
 
 const menuItems = [
   {
@@ -120,9 +122,7 @@ function MobileMenuItem({ item, onClick }) {
           className="absolute inset-0 z-0 pointer-events-none rounded-2xl"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={
-            isFlipped
-              ? { opacity: 1, scale: 2 }
-              : { opacity: 0, scale: 0.8 }
+            isFlipped ? { opacity: 1, scale: 2 } : { opacity: 0, scale: 0.8 }
           }
           transition={{
             opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
@@ -153,9 +153,7 @@ function MobileMenuItem({ item, onClick }) {
           href={item.href}
           className="flex items-center gap-2 px-4 py-3 absolute inset-0 z-10 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-xl"
           animate={
-            isFlipped
-              ? { rotateX: 0, opacity: 1 }
-              : { rotateX: 90, opacity: 0 }
+            isFlipped ? { rotateX: 0, opacity: 1 } : { rotateX: 90, opacity: 0 }
           }
           transition={sharedTransition}
           style={{
@@ -273,14 +271,24 @@ export default function Navbar() {
           <div className="relative z-10">
             <div className="flex items-center justify-between p-2">
               <span className="font-semibold text-gray-800 dark:text-white">
-                Menu
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={70}
+                  height={70}
+                  className="inline-block cursor-pointer"
+                />
               </span>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 aria-label="Toggle menu"
               >
-                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                {mobileMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
               </button>
             </div>
 

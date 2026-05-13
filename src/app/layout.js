@@ -1,18 +1,17 @@
-import { Inter, Fira_Code } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import StructuredData from "../../components/StructuredData/StructuredData";
 
-const inter = Inter({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
 });
 
-const firaCode = Fira_Code({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-fira-code",
-  display: "swap",
 });
 
 export const metadata = {
@@ -41,7 +40,9 @@ export const metadata = {
     "Computer Science Student",
     "Kurigram, Bangladesh",
   ],
-  authors: [{ name: "Mehedi Hasan", url: "https://github.com/mehedi-hasan2006" }],
+  authors: [
+    { name: "Mehedi Hasan", url: "https://github.com/mehedi-hasan2006" },
+  ],
   creator: "Mehedi Hasan",
   publisher: "Mehedi Hasan",
   formatDetection: {
@@ -129,10 +130,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${firaCode.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}  h-full antialiased`}
     >
+      <head>
+        <StructuredData />
+      </head>
       <body className="min-h-full flex flex-col">
-        {" "}
         <Navbar /> {children} <Footer />
       </body>
     </html>

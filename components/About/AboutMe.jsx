@@ -163,7 +163,7 @@ export default function AboutMe() {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl rotate-6 group-hover:rotate-3 transition-transform duration-300 opacity-75"></div>
               <img
-                src="https://avatars.githubusercontent.com/u/202413245?v=4"
+                src="https://i.ibb.co.com/LXmbnFRJ/mehedi-port2.png"
                 alt="MD. Mehedi Hasan"
                 className="relative w-full h-full object-cover rounded-2xl border-4 border-white dark:border-gray-800 shadow-xl"
               />

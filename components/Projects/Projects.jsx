@@ -68,6 +68,19 @@ const projectsData = [
     live: "https://mehedi-english-janala.netlify.app/",
     role: "Frontend Developer",
   },
+  {
+    id: "4",
+    title: "PAYOO - Smart MFS Interface",
+    description:
+      "PAYOO is a smart Mobile Financial Services (MFS) interface that provides a seamless digital banking experience. It offers a user-friendly platform for managing finances, making transactions, and accessing various financial services with ease.",
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
+    tech: ["JavaScript (DOM) ", "TailwindCSS", "Netlify"],
+    category: "frontend",
+    github: "https://github.com/mehedi-hasan2006/payoo-mobile-banking-app",
+    live: "https://payoo-mfsbank.netlify.app/",
+    role: "Frontend Developer",
+  },
 ];
 
 const categories = [

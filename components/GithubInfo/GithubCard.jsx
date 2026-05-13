@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -20,6 +19,7 @@ import {
   CalendarDays,
   GitCommit,
   BarChart3,
+  Sparkles,
 } from "lucide-react";
 
 const containerVariants = {
@@ -215,11 +215,18 @@ export default function GithubCard({ data }) {
       className="mx-auto container px-4 py-12 lg:py-16"
     >
       {/* Section Header */}
-      <motion.div variants={itemVariants} className="mb-8">
-        <div className="text-fuchsia-600 font-semibold flex items-center gap-2 mb-3">
-          <p className="w-7 h-1 bg-fuchsia-600 rounded-full"></p>
-          <span className="tracking-wider uppercase text-sm">GitHub</span>
-        </div>
+      <motion.div variants={itemVariants} className="mb-8 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="inline-flex items-center   gap-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 px-4 py-2 rounded-full mb-6 border border-blue-200 dark:border-blue-800"
+        >
+          <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+          <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+            GitHub Profile Overview
+          </span>
+        </motion.div>
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white py-3">
           Contributions & Activity
         </h2>

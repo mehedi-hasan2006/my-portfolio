@@ -357,8 +357,16 @@ const Hero = () => {
                   href: "https://github.com/mehedi-hasan2006",
                   label: "GitHub",
                 },
-                { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-                { icon: FaFacebook, href: "#", label: "Facebook" },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/mehedi-hasan-2006",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: FaFacebook,
+                  href: "https://www.facebook.com/mdmehedi.hasan2006",
+                  label: "Facebook",
+                },
               ].map((social, index) => {
                 const IconComponent = social.icon;
                 return (

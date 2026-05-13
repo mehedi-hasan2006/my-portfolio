@@ -1,17 +1,17 @@
 "use client";
-
-import React from "react";
-import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
+import { MdContactPhone } from "react-icons/md";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Home,
-  Settings,
-  Bell,
-  User,
   CircleUser,
+  CodeXml,
+  Layers,
   GraduationCap,
-  Layers, CodeXml 
+  Menu,
+  X,
 } from "lucide-react";
-import { div } from "motion/react-client";
+
 const menuItems = [
   {
     icon: <Home className="h-5 w-5" />,
@@ -30,7 +30,7 @@ const menuItems = [
     iconColor: "group-hover:text-orange-500 dark:group-hover:text-orange-400",
   },
   {
-    icon: <CodeXml  className="h-5 w-5" />,
+    icon: <CodeXml className="h-5 w-5" />,
     label: "Skills",
     href: "#skills",
     gradient:
@@ -54,153 +54,260 @@ const menuItems = [
     iconColor: "group-hover:text-green-500 dark:group-hover:text-green-400",
   },
   {
-    icon: <Settings className="h-5 w-5" />,
+    icon: <MdContactPhone className="h-5 w-5" />,
     label: "Contact",
     href: "#contact",
     gradient:
-      "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(22,163,74,0.06) 50%, rgba(21,128,61,0) 100%)",
+      "radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(8,145,178,0.06) 50%, rgba(14,116,144,0) 100%)",
     iconColor: "group-hover:text-cyan-500 dark:group-hover:text-cyan-400",
   },
 ];
-const itemVariants = {
-  initial: {
-    rotateX: 0,
-    opacity: 1,
-  },
-  hover: {
-    rotateX: -90,
-    opacity: 0,
-  },
-};
-const backVariants = {
-  initial: {
-    rotateX: 90,
-    opacity: 0,
-  },
-  hover: {
-    rotateX: 0,
-    opacity: 1,
-  },
-};
-const glowVariants = {
-  initial: {
-    opacity: 0,
-    scale: 0.8,
-  },
-  hover: {
-    opacity: 1,
-    scale: 2,
-    transition: {
-      opacity: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1],
-      },
-      scale: {
-        duration: 0.5,
-        type: "spring",
-        stiffness: 300,
-        damping: 25,
-      },
-    },
-  },
-};
-const navGlowVariants = {
-  initial: {
-    opacity: 0,
-  },
-  hover: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.4, 0, 0.2, 1],
-    },
-  },
-};
+
 const sharedTransition = {
   type: "spring",
   stiffness: 100,
   damping: 20,
   duration: 0.5,
 };
-function Navbar() {
+
+const itemVariants = {
+  initial: { rotateX: 0, opacity: 1 },
+  hover: { rotateX: -90, opacity: 0 },
+};
+
+const backVariants = {
+  initial: { rotateX: 90, opacity: 0 },
+  hover: { rotateX: 0, opacity: 1 },
+};
+
+const glowVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  hover: {
+    opacity: 1,
+    scale: 2,
+    transition: {
+      opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+      scale: { duration: 0.5, type: "spring", stiffness: 300, damping: 25 },
+    },
+  },
+};
+
+const navGlowVariants = {
+  initial: { opacity: 0 },
+  hover: {
+    opacity: 1,
+    transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+  },
+};
+
+// Mobile menu item with tap-to-flip animation
+function MobileMenuItem({ item, onClick }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleTap = () => {
+    setIsFlipped(!isFlipped);
+    onClick();
+  };
+
   return (
-    <div className="container mx-auto my-5 sticky top-5 z-50">
+    <motion.li className="relative list-none">
+      <motion.div
+        className="block rounded-xl overflow-visible"
+        style={{ perspective: "600px" }}
+        onClick={handleTap}
+      >
+        <motion.div
+          className="absolute inset-0 z-0 pointer-events-none rounded-2xl"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={
+            isFlipped
+              ? { opacity: 1, scale: 2 }
+              : { opacity: 0, scale: 0.8 }
+          }
+          transition={{
+            opacity: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+            scale: { type: "spring", stiffness: 300, damping: 25 },
+          }}
+          style={{ background: item.gradient }}
+        />
+        <motion.a
+          href={item.href}
+          className="flex items-center gap-2 px-4 py-3 relative z-10 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-xl w-full"
+          animate={
+            isFlipped
+              ? { rotateX: -90, opacity: 0 }
+              : { rotateX: 0, opacity: 1 }
+          }
+          transition={sharedTransition}
+          style={{
+            transformStyle: "preserve-3d",
+            transformOrigin: "center bottom",
+          }}
+        >
+          <span className={`transition-colors duration-300 ${item.iconColor}`}>
+            {item.icon}
+          </span>
+          <span className="font-medium">{item.label}</span>
+        </motion.a>
+        <motion.a
+          href={item.href}
+          className="flex items-center gap-2 px-4 py-3 absolute inset-0 z-10 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-xl"
+          animate={
+            isFlipped
+              ? { rotateX: 0, opacity: 1 }
+              : { rotateX: 90, opacity: 0 }
+          }
+          transition={sharedTransition}
+          style={{
+            transformStyle: "preserve-3d",
+            transformOrigin: "center top",
+          }}
+        >
+          <span className={`transition-colors duration-300 ${item.iconColor}`}>
+            {item.icon}
+          </span>
+          <span className="font-medium">{item.label}</span>
+        </motion.a>
+      </motion.div>
+    </motion.li>
+  );
+}
+
+function DesktopMenuItem({ item }) {
+  return (
+    <motion.li className="relative">
+      <motion.div
+        className="block rounded-xl overflow-visible group relative"
+        style={{ perspective: "600px" }}
+        whileHover="hover"
+        initial="initial"
+      >
+        <motion.div
+          className="absolute inset-0 z-0 pointer-events-none rounded-2xl"
+          variants={glowVariants}
+          style={{ background: item.gradient, opacity: 0 }}
+        />
+        <motion.a
+          href={item.href}
+          className="flex items-center gap-2 px-4 py-2 relative z-10 bg-transparent text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors rounded-xl"
+          variants={itemVariants}
+          transition={sharedTransition}
+          style={{
+            transformStyle: "preserve-3d",
+            transformOrigin: "center bottom",
+          }}
+        >
+          <span className={`transition-colors duration-300 ${item.iconColor}`}>
+            {item.icon}
+          </span>
+          <span className="font-medium">{item.label}</span>
+        </motion.a>
+        <motion.a
+          href={item.href}
+          className="flex items-center gap-2 px-4 py-2 absolute inset-0 z-10 bg-transparent text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors rounded-xl"
+          variants={backVariants}
+          transition={sharedTransition}
+          style={{
+            transformStyle: "preserve-3d",
+            transformOrigin: "center top",
+            transform: "rotateX(90deg)",
+          }}
+        >
+          <span className={`transition-colors duration-300 ${item.iconColor}`}>
+            {item.icon}
+          </span>
+          <span className="font-medium">{item.label}</span>
+        </motion.a>
+      </motion.div>
+    </motion.li>
+  );
+}
+
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
+  return (
+    <div className="container mx-auto my-5 sticky top-5 z-50 px-4 sm:px-0">
       <motion.nav
         className="p-2 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-lg border border-gray-200/80 dark:border-gray-800/80 shadow-lg dark:shadow-gray-900/20 relative overflow-hidden"
         initial="initial"
-        whileHover="hover"
+        whileHover={!isMobile ? "hover" : undefined}
       >
-        <motion.div
-          className="absolute -inset-2 rounded-3xl z-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(147,51,234,0.1) 50%, rgba(239,68,68,0.1) 100%)",
-          }}
-          variants={navGlowVariants}
-        />
-        <ul className="flex items-center justify-center gap-2 relative z-10">
-          {menuItems.map((item) => (
-            <motion.li key={item.label} className="relative">
-              <motion.div
-                className="block rounded-xl overflow-visible group relative"
-                style={{
-                  perspective: "600px",
-                }}
-                whileHover="hover"
-                initial="initial"
+        {/* Ambient glow on desktop hover */}
+        {!isMobile && (
+          <motion.div
+            className="absolute -inset-2 rounded-3xl z-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(147,51,234,0.1) 50%, rgba(239,68,68,0.1) 100%)",
+            }}
+            variants={navGlowVariants}
+          />
+        )}
+
+        {/* Desktop menu */}
+        {!isMobile && (
+          <ul className="hidden md:flex items-center justify-center gap-2 relative z-10">
+            {menuItems.map((item) => (
+              <DesktopMenuItem key={item.label} item={item} />
+            ))}
+          </ul>
+        )}
+
+        {/* Mobile menu */}
+        {isMobile && (
+          <div className="relative z-10">
+            <div className="flex items-center justify-between p-2">
+              <span className="font-semibold text-gray-800 dark:text-white">
+                Menu
+              </span>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle menu"
               >
-                {}
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
+
+            <AnimatePresence>
+              {mobileMenuOpen && (
                 <motion.div
-                  className="absolute inset-0 z-0 pointer-events-none rounded-2xl"
-                  variants={glowVariants}
-                  style={{
-                    background: item.gradient,
-                    opacity: 0,
-                  }}
-                />
-                {}
-                <motion.a
-                  href={item.href}
-                  className="flex items-center gap-2 px-4 py-2 relative z-10 bg-transparent text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors rounded-xl"
-                  variants={itemVariants}
-                  transition={sharedTransition}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "center bottom",
-                  }}
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
                 >
-                  <span
-                    className={`transition-colors duration-300 ${item.iconColor}`}
-                  >
-                    {item.icon}
-                  </span>
-                  <span className="font-medium">{item.label}</span>
-                </motion.a>
-                {}
-                <motion.a
-                  href={item.href}
-                  className="flex items-center gap-2 px-4 py-2 absolute inset-0 z-10 bg-transparent text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors rounded-xl"
-                  variants={backVariants}
-                  transition={sharedTransition}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    transformOrigin: "center top",
-                    transform: "rotateX(90deg)",
-                  }}
-                >
-                  <span
-                    className={`transition-colors duration-300 ${item.iconColor}`}
-                  >
-                    {item.icon}
-                  </span>
-                  <span className="font-medium">{item.label}</span>
-                </motion.a>
-              </motion.div>
-            </motion.li>
-          ))}
-        </ul>
+                  <ul className="flex flex-col gap-1 pt-2 border-t border-gray-200 dark:border-gray-700">
+                    {menuItems.map((item) => (
+                      <MobileMenuItem
+                        key={item.label}
+                        item={item}
+                        onClick={handleLinkClick}
+                      />
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
       </motion.nav>
     </div>
   );
 }
-export default Navbar;

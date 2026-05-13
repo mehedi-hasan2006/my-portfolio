@@ -1,7 +1,14 @@
-
 "use client";
-import { FaBootstrap , FaNodeJs , FaReact , FaGithub ,FaFigma , FaPython ,FaJava  } from "react-icons/fa";
-import { SiMysql, SiExpress, SiBetterauth, SiNetlify   } from "react-icons/si";
+import {
+  FaBootstrap,
+  FaNodeJs,
+  FaReact,
+  FaGithub,
+  FaFigma,
+  FaPython,
+  FaJava,
+} from "react-icons/fa";
+import { SiMysql, SiExpress, SiBetterauth, SiNetlify } from "react-icons/si";
 import { PiFileSqlLight } from "react-icons/pi";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
@@ -29,17 +36,26 @@ const skillCategories = [
     icon: Code2,
     color: "from-blue-500 to-cyan-500",
     textColor: "text-blue-600 dark:text-blue-400",
-    bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20",
+    bgColor:
+      "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20",
     borderColor: "border-blue-200 dark:border-blue-800",
     iconBg: "bg-gradient-to-br from-blue-500 to-cyan-500",
     skills: [
-      { name: "React.js", icon: <FaReact />, level: "Intermediate", category: "Library" },
-      { name: "Next.js", icon: "▲", level: "Advanced", category: "Framework" },
-      { name: "JavaScript", icon: <IoLogoJavascript />, level: "Intermediate", category: "Programming Language" },
-      { name: "TailwindCSS", icon: <RiTailwindCssFill />, level: "Expert", category: "CSS Framework" },
-      { name: "HTML5/CSS3", icon: "🌐", level: "Expert", category: "Markup" },
-      { name: "Framer Motion", icon: "🎭", level: "Beginner", category: "Animation" },
-      { name: "Bootstrap", icon: <FaBootstrap />, level: "Advanced", category: "CSS Framework" },
+      { name: "React.js", icon: <FaReact />, category: "Library" },
+      { name: "Next.js", icon: "▲", category: "Framework" },
+      {
+        name: "JavaScript",
+        icon: <IoLogoJavascript />,
+        category: "Programming Language",
+      },
+      {
+        name: "TailwindCSS",
+        icon: <RiTailwindCssFill />,
+        category: "CSS Framework",
+      },
+      { name: "HTML5/CSS3", icon: "🌐", category: "Markup" },
+      { name: "Framer Motion", icon: "🎭", category: "Animation" },
+      { name: "Bootstrap", icon: <FaBootstrap />, category: "CSS Framework" },
     ],
   },
   {
@@ -49,15 +65,16 @@ const skillCategories = [
     icon: Server,
     color: "from-green-500 to-emerald-500",
     textColor: "text-green-600 dark:text-green-400",
-    bgColor: "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20",
+    bgColor:
+      "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20",
     borderColor: "border-green-200 dark:border-green-800",
     iconBg: "bg-gradient-to-br from-green-500 to-emerald-500",
     skills: [
-      { name: "Node.js", icon: <FaNodeJs />, level: "Intermediate", category: "Runtime" },
-      { name: "Express.js", icon: <SiExpress />, level: "Intermediate", category: "Framework" },
-      { name: "REST APIs", icon: "🔌", level: "Intermediate", category: "Architecture" },
-      { name: "SQL", icon: <PiFileSqlLight />, level: "Beginner", category: "Query Language" },
-      { name: "Better Auth", icon: <SiBetterauth />, level: "Intermediate", category: "Security" },
+      { name: "Node.js", icon: <FaNodeJs />, category: "Runtime" },
+      { name: "Express.js", icon: <SiExpress />, category: "Framework" },
+      { name: "REST APIs", icon: "🔌", category: "Architecture" },
+      { name: "SQL", icon: <PiFileSqlLight />, category: "Query Language" },
+      { name: "Better Auth", icon: <SiBetterauth />, category: "Security" },
     ],
   },
   {
@@ -67,12 +84,17 @@ const skillCategories = [
     icon: Database,
     color: "from-purple-500 to-pink-500",
     textColor: "text-purple-600 dark:text-purple-400",
-    bgColor: "bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20",
+    bgColor:
+      "bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20",
     borderColor: "border-purple-200 dark:border-purple-800",
     iconBg: "bg-gradient-to-br from-purple-500 to-pink-500",
     skills: [
-      { name: "JavaScript", icon: <IoLogoJavascript />, level: "Intermediate", category: "Programming Language" },
-      { name: "MySQL", icon: <SiMysql />, level: "Intermediate", category: "Relational" },
+      {
+        name: "JavaScript",
+        icon: <IoLogoJavascript />,
+        category: "Programming Language",
+      },
+      { name: "MySQL", icon: <SiMysql />, category: "Relational" },
     ],
   },
   {
@@ -82,13 +104,18 @@ const skillCategories = [
     icon: Code2,
     color: "from-indigo-500 to-violet-500",
     textColor: "text-indigo-600 dark:text-indigo-400",
-    bgColor: "bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/20 dark:to-violet-950/20",
+    bgColor:
+      "bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/20 dark:to-violet-950/20",
     borderColor: "border-indigo-200 dark:border-indigo-800",
     iconBg: "bg-gradient-to-br from-indigo-500 to-violet-500",
     skills: [
-      { name: "JavaScript", icon: <IoLogoJavascript />, level: "Intermediate", category: "Programming Language" },
-      { name: "Python", icon: <FaPython />, level: "Beginner", category: "Programming Language" },
-      { name: "Java", icon: <FaJava />, level: "Beginner", category: "Programming Language" },
+      {
+        name: "JavaScript",
+        icon: <IoLogoJavascript />,
+        category: "Programming Language",
+      },
+      { name: "Python", icon: <FaPython />, category: "Programming Language" },
+      { name: "Java", icon: <FaJava />, category: "Programming Language" },
     ],
   },
   {
@@ -98,26 +125,46 @@ const skillCategories = [
     icon: Wrench,
     color: "from-orange-500 to-red-500",
     textColor: "text-orange-600 dark:text-orange-400",
-    bgColor: "bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20",
+    bgColor:
+      "bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20",
     borderColor: "border-orange-200 dark:border-orange-800",
     iconBg: "bg-gradient-to-br from-orange-500 to-red-500",
     skills: [
-      { name: "GitHub", icon: <FaGithub />, level: "Intermediate", category: "Version Control" },
-      { name: "VS Code", icon: <VscVscode />, level: "Expert", category: "Editor" },
-      { name: "Figma", icon: <FaFigma />, level: "Intermediate", category: "Design" },
-      { name: "Docker", icon: "🐳", level: "Beginner", category: "Container" },
-      { name: "Vercel", icon: "▲", level: "Intermediate", category: "Deployment" },
-      { name: "Netlify", icon: <SiNetlify />, level: "Intermediate", category: "Deployment" },
-      
+      { name: "GitHub", icon: <FaGithub />, category: "Version Control" },
+      { name: "VS Code", icon: <VscVscode />, category: "Editor" },
+      { name: "Figma", icon: <FaFigma />, category: "Design" },
+      { name: "Docker", icon: "🐳", category: "Container" },
+      { name: "Vercel", icon: "▲", category: "Deployment" },
+      { name: "Netlify", icon: <SiNetlify />, category: "Deployment" },
     ],
   },
 ];
 
 const expertiseLevels = [
-  { level: "Expert", icon: Trophy, color: "text-yellow-500", bg: "bg-yellow-100 dark:bg-yellow-900/30" },
-  { level: "Advanced", icon: Star, color: "text-blue-500", bg: "bg-blue-100 dark:bg-blue-900/30" },
-  { level: "Intermediate", icon: Target, color: "text-green-500", bg: "bg-green-100 dark:bg-green-900/30" },
-  { level: "Beginner", icon: Zap, color: "text-gray-500", bg: "bg-gray-100 dark:bg-gray-800" },
+  {
+    level: "Expert",
+    icon: Trophy,
+    color: "text-yellow-500",
+    bg: "bg-yellow-100 dark:bg-yellow-900/30",
+  },
+  {
+    level: "Advanced",
+    icon: Star,
+    color: "text-blue-500",
+    bg: "bg-blue-100 dark:bg-blue-900/30",
+  },
+  {
+    level: "Intermediate",
+    icon: Target,
+    color: "text-green-500",
+    bg: "bg-green-100 dark:bg-green-900/30",
+  },
+  {
+    level: "Beginner",
+    icon: Zap,
+    color: "text-gray-500",
+    bg: "bg-gray-100 dark:bg-gray-800",
+  },
 ];
 
 const containerVariants = {
@@ -151,7 +198,11 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   const allSkills = skillCategories.flatMap((cat) =>
-    cat.skills.map((skill) => ({ ...skill, categoryId: cat.id, categoryTitle: cat.title }))
+    cat.skills.map((skill) => ({
+      ...skill,
+      categoryId: cat.id,
+      categoryTitle: cat.title,
+    })),
   );
 
   const filteredSkills =
@@ -160,7 +211,10 @@ export default function Skills() {
       : allSkills.filter((skill) => skill.categoryId === activeCategory);
 
   return (
-    <section className="relative bg-white dark:bg-gray-950 py-16 lg:py-24 overflow-hidden" id="skills">
+    <section
+      className="relative bg-white dark:bg-gray-950 py-16 lg:py-24 overflow-hidden"
+      id="skills"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -203,7 +257,7 @@ export default function Skills() {
         </motion.div>
 
         {/* Legend */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="flex flex-wrap justify-center gap-3 mb-10"
@@ -220,7 +274,7 @@ export default function Skills() {
               </div>
             );
           })}
-        </motion.div>
+        </motion.div> */}
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -323,7 +377,9 @@ export default function Skills() {
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className={`text-lg font-semibold ${category.textColor}`}>
+                    <h3
+                      className={`text-lg font-semibold ${category.textColor}`}
+                    >
                       {category.title}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">

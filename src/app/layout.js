@@ -87,11 +87,9 @@ export const metadata = {
     creator: "@mehedihasan",
     images: ["/og-image.png"],
   },
-  // verification: {
-  //   google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  //   yandex: "YOUR_YANDEX_VERIFICATION_CODE",
-  //   yahoo: "YOUR_YAHOO_VERIFICATION_CODE",
-  // },
+  verification: {
+    google: "uLuSmdoHcw3Pom1rjKZJeYEsjs4Z1lSzNnhIqQU1zIE",
+  },
   alternates: {
     canonical: "https://mdmehedi.vercel.app",
     languages: {

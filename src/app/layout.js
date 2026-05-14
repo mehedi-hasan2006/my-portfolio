@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://mehedihasan.dev"),
+  metadataBase: new URL("https://mdmehedi.vercel.app"),
   title: {
     default: "Mehedi Hasan | MERN Stack Developer & Portfolio",
     template: "%s | Mehedi Hasan",
@@ -65,7 +65,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mehedihasan.dev",
+    url: "https://mdmehedi.vercel.app/",
     siteName: "Mehedi Hasan Portfolio",
     title: "Mehedi Hasan | MERN Stack Developer",
     description:
@@ -87,34 +87,23 @@ export const metadata = {
     creator: "@mehedihasan",
     images: ["/og-image.png"],
   },
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-    yandex: "YOUR_YANDEX_VERIFICATION_CODE",
-    yahoo: "YOUR_YAHOO_VERIFICATION_CODE",
-  },
+  // verification: {
+  //   google: "YOUR_GOOGLE_VERIFICATION_CODE",
+  //   yandex: "YOUR_YANDEX_VERIFICATION_CODE",
+  //   yahoo: "YOUR_YAHOO_VERIFICATION_CODE",
+  // },
   alternates: {
-    canonical: "https://mehedihasan.dev",
+    canonical: "https://mdmehedi.vercel.app",
     languages: {
-      "en-US": "https://mehedihasan.dev/en",
+      "en-US": "https://mdmehedi.vercel.app/en",
     },
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "any" },
+      { url: "/logo.png", type: "image/svg+xml" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-        color: "#3b82f6",
-      },
-    ],
+    apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.json",
   category: "technology",

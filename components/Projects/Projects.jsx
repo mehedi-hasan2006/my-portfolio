@@ -31,12 +31,7 @@ const projectsData = [
     title: "Online Book Browing Platform",
     description:
       "Your digital sanctuary for discovering, borrowing, and losing yourself in thousands of handpicked books. Read anywhere, anytime",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-    ],
+    image: "https://i.ibb.co.com/KzSc3BGc/Screenshot-2026-05-14-214450.png",
     tech: ["React", "Next.js", "MongoDB", "BtterAuth", "HeroUI"],
     category: "fullstack",
     github:
@@ -45,23 +40,21 @@ const projectsData = [
   },
   {
     id: "2",
-    title: "GitHub Issue Tracker ",
+    title: " Digital Tools Platform",
     description:
-      "A powerful issue tracking system inspired by GitHub, built with Next.js for real-time collaboration.",
-    image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      "Digital Tools Platform is a web-based application that provides a collection of useful online utilities to simplify everyday digital tasks. Users can access multiple tools directly from the browser without installing any software. The platform focuses on productivity, efficiency, and ease of use, making it helpful for developers, designers, and general users.",
+    image: "https://i.ibb.co.com/hJm5cb7p/Screenshot-2026-05-14-215003.png",
     tech: ["JavaScript", "TailwindCSS", "Netlify"],
     category: "fullstack",
-    github: "https://github.com/mehedi-hasan2006/PH-A5-GitHub-Issues-Tracker",
-    live: "https://mehedi-github-issue-tracker.netlify.app/",
+    github: "https://github.com/mehedi-hasan2006/PH-A06-DigiTools-Platform",
+    live: "https://digitaltools-platform.netlify.app/",
   },
   {
     id: "3",
     title: "English Janala",
     description:
       "English Janala is a simple and interactive web application designed to help users learn English vocabulary and basic concepts in an engaging way.Personal portfolio with dark mode, smooth animations, responsive design, and optimized performance showcasing projects and skills.",
-    image:
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
+    image: "https://i.ibb.co.com/0ggqmd7/home-1.png",
     tech: ["JavaScript (DOM) ", "TailwindCSS", "Netlify"],
     category: "frontend",
     github: "https://github.com/mehedi-hasan2006/english-janala",
@@ -73,8 +66,7 @@ const projectsData = [
     title: "PAYOO - Smart MFS Interface",
     description:
       "PAYOO is a smart Mobile Financial Services (MFS) interface that provides a seamless digital banking experience. It offers a user-friendly platform for managing finances, making transactions, and accessing various financial services with ease.",
-    image:
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
+    image: "https://i.ibb.co.com/RGc5fj0w/Screenshot-2026-05-14-224750.png",
     tech: ["JavaScript (DOM) ", "TailwindCSS", "Netlify"],
     category: "frontend",
     github: "https://github.com/mehedi-hasan2006/payoo-mobile-banking-app",

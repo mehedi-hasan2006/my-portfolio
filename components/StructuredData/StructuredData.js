@@ -1,31 +1,30 @@
-
 export default function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://mehedihasan.dev/#person",
-        name: "Mehedi Hasan",
+        "@id": "https://mdmehedi.vercel.app/#about",
+        name: "Md. Mehedi Hasan",
         givenName: "Mehedi",
         familyName: "Hasan",
-        url: "https://mehedihasan.dev",
-        image: "https://mehedihasan.dev/profile.jpg",
+        url: "https://mdmehedi.vercel.app",
+        image: "https://mdmehedi.vercel.app/profile.png",
         description:
-          "MERN Stack Developer specializing in React, Next.js, Node.js, and MongoDB",
+          "MERN Stack Developer specializing in React, Next.js, Node.js, and MongoDB & Computer Science Student",
         jobTitle: "MERN Stack Developer",
         gender: "Male",
         birthDate: "2006",
         nationality: "Bangladeshi",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Kurigram",
+          addressLocality: "Bhurungamari, Kurigram",
           addressCountry: "BD",
         },
         sameAs: [
           "https://github.com/mehedi-hasan2006",
-          "https://linkedin.com/in/mehedihasan",
-          "https://twitter.com/mehedihasan",
+          "https://www.linkedin.com/in/mehedi-hasan-2006",
+          "https://www.facebook.com/mdmehedi.hasan2006",
         ],
         knowsAbout: [
           "Web Development",
@@ -38,6 +37,7 @@ export default function StructuredData() {
           "TailwindCSS",
           "Express.js",
           "REST APIs",
+          "Computer Science Student",
         ],
         alumniOf: [
           {
@@ -48,25 +48,25 @@ export default function StructuredData() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://mehedihasan.dev/#website",
-        url: "https://mehedihasan.dev",
+        "@id": "https://mdmehedi.vercel.app/#about",
+        url: "https://mdmehedi.vercel.app",
         name: "Mehedi Hasan Portfolio",
         description: "MERN Stack Developer Portfolio Website",
         publisher: {
-          "@id": "https://mehedihasan.dev/#person",
+          "@id": "https://mdmehedi.vercel.app/#about",
         },
         inLanguage: "en-US",
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://mehedihasan.dev/#webpage",
-        url: "https://mehedihasan.dev",
+        "@id": "https://mdmehedi.vercel.app/#about",
+        url: "https://mdmehedi.vercel.app/",
         name: "Mehedi Hasan | MERN Stack Developer",
         isPartOf: {
-          "@id": "https://mehedihasan.dev/#website",
+          "@id": "https://mdmehedi.vercel.app/#about",
         },
         about: {
-          "@id": "https://mehedihasan.dev/#person",
+          "@id": "https://mdmehedi.vercel.app/#about",
         },
         datePublished: "2025-03-08T12:32:49+06:00",
         dateModified: new Date().toISOString(),

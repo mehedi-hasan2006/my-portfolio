@@ -299,7 +299,7 @@ const Hero = () => {
                 "🚀 MERN Stack Developer",
                 "⚛️ React Enthusiast",
                 "💡 Open Source Lover",
-                "🎨 UI/UX Designer",
+                
               ].map((tag, index) => (
                 <motion.span
                   key={tag}

@@ -6,7 +6,6 @@ import Hero from "../../components/Hero/Hero";
 import Projects from "../../components/Projects/Projects";
 import Skills from "../../components/Skills/Skills";
 
-
 export const metadata = {
   title: "Mehedi Hasan | MERN Stack Web Developer",
   description:
@@ -15,10 +14,10 @@ export const metadata = {
     title: "Mehedi Hasan | MERN Stack Web Developer Portfolio",
     description:
       "Explore my portfolio showcasing web development projects, skills, and experience in MERN stack technologies.",
-    url: "https://mehedihasan.dev",
+    url: "https://mdmehedi.vercel.app",
     images: [
       {
-        url: "/home-og.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Mehedi Hasan Portfolio Homepage",
@@ -26,7 +25,6 @@ export const metadata = {
     ],
   },
 };
-
 
 export default function Home() {
   return (

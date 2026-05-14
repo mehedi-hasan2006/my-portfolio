@@ -1,0 +1,9 @@
+# https://mehedihasan.dev/robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Crawl-delay: 10
+
+Sitemap: https://mdmehedi.vercel.app/sitemap.js

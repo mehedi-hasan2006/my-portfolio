@@ -3,15 +3,7 @@ import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
-  Star,
-  GitFork,
-  Calendar,
-  Eye,
   Sparkles,
-  Trophy,
-  TrendingUp,
-  Clock,
-  Users,
   Code2,
   Server,
   Palette,
@@ -20,10 +12,9 @@ import {
   X,
   ArrowUpRight,
   ChevronRight,
-  Bookmark,
-  Share2,
 } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 const projectsData = [
   {
@@ -381,6 +372,19 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
+                  
+                  {/* View Details  */}
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="text-sm text-blue-600 dark:text-blue-400 hover:underline "
+                  >
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
+                    >
+                      View Details
+                    </motion.button>
+                  </Link>
 
                   {/* Stats */}
                   {/* <div className="flex items-center justify-between pt-4 ">

@@ -68,6 +68,9 @@ export default function StructuredData() {
         about: {
           "@id": "https://mdmehedi.vercel.app/#about",
         },
+        mainEntity: {
+          "@id": "https://mehedihasan.dev/#about",
+        },
         datePublished: "2025-03-08T12:32:49+06:00",
         dateModified: new Date().toISOString(),
       },

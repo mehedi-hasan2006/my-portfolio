@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1",
+    "title": "Online Book Browing Platform",
+    "description": "Your digital sanctuary for discovering, borrowing, and losing yourself in thousands of handpicked books. Read anywhere, anytime",
+    "image": "https://i.ibb.co.com/KzSc3BGc/Screenshot-2026-05-14-214450.png",
+    "tech": ["React", "Next.js", "MongoDB", "BtterAuth", "HeroUI"],
+    "category": "fullstack",
+    "views": 120,
+    "github": "https://github.com/mehedi-hasan2006/A8-online-book-browing-platform",
+    "live": "https://online-book-browing-platform.vercel.app/"
+  },
+  {
+    "id": "2",
+    "title": "Digital Tools Platform",
+    "description": "Digital Tools Platform is a web-based application that provides a collection of useful online utilities to simplify everyday digital tasks. Users can access multiple tools directly from the browser without installing any software. The platform focuses on productivity, efficiency, and ease of use, making it helpful for developers, designers, and general users.",
+    "image": "https://i.ibb.co.com/hJm5cb7p/Screenshot-2026-05-14-215003.png",
+    "tech": ["JavaScript", "TailwindCSS", "Netlify"],
+    "category": "fullstack",
+    "views": 98,
+    "github": "https://github.com/mehedi-hasan2006/PH-A06-DigiTools-Platform",
+    "live": "https://digitaltools-platform.netlify.app/"
+  },
+  {
+    "id": "3",
+    "title": "English Janala",
+    "description": "English Janala is a simple and interactive web application designed to help users learn English vocabulary and basic concepts in an engaging way. Personal portfolio with dark mode, smooth animations, responsive design, and optimized performance showcasing projects and skills.",
+    "image": "https://i.ibb.co.com/0ggqmd7/home-1.png",
+    "tech": ["JavaScript (DOM)", "TailwindCSS", "Netlify", "Daisy UI"],
+    "category": "frontend",
+    "views": 222,
+    "github": "https://github.com/mehedi-hasan2006/english-janala",
+    "live": "https://mehedi-english-janala.netlify.app/",
+    "role": "Frontend Developer"
+  },
+  {
+    "id": "4",
+    "title": "PAYOO - Smart MFS Interface",
+    "description": "PAYOO is a smart Mobile Financial Services (MFS) interface that provides a seamless digital banking experience. It offers a user-friendly platform for managing finances, making transactions, and accessing various financial services with ease.",
+    "image": "https://i.ibb.co.com/RGc5fj0w/Screenshot-2026-05-14-224750.png",
+    "tech": ["JavaScript (DOM)", "TailwindCSS", "Netlify"],
+    "category": "frontend",
+    "views": 278,
+    "github": "https://github.com/mehedi-hasan2006/payoo-mobile-banking-app",
+    "live": "https://payoo-mfsbank.netlify.app/",
+    "role": "Frontend Developer"
+  }
+]

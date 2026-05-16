@@ -153,7 +153,7 @@ export default function AboutMe() {
       ],
     },
     {
-      year: 2025,
+      year: "2025-2026",
       title: "MERN Stack Mastery",
       description: "Dived into React, Node.js, Express, and MongoDB",
       icon: FaReact,
@@ -378,12 +378,12 @@ export default function AboutMe() {
               </div>
               
               {/* Online Status Badge */}
-              <div className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
+              {/* <div className="absolute bottom-2 right-2 flex items-center gap-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
                   Available for work
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
 

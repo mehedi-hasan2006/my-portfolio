@@ -3,7 +3,7 @@ import ProjectDetailsPage from "../../../../components/Projects/ProjectDetailsPa
 async function ProjectDetails({ params }) {
   const { id } = await params;
 
-  const res = await fetch(`http://localhost:3000/projects.json`);
+  const res = await fetch(`https://mdmehedi.vercel.app/projects.json`);
   const data = await res.json();
 
   const project = data.find((project) => project.id === id);

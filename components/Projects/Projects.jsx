@@ -18,6 +18,27 @@ import Link from "next/link";
 
 const projectsData = [
   {
+    id: "drivee-fleet",
+    title: "Drive-Fleet - A Car Rental Website",
+    description:
+      "Drive Fleet is a full-stack car rental web application where users can discover hundreds of premium vehicles, book rentals seamlessly, and manage their bookings — all from a polished, responsive UI.",
+    image:
+      "https://i.ibb.co.com/DHQZf1x5/Gemini-Generated-Image-z05h6iz05h6iz05h.png",
+    tech: [
+      "Next.js",
+      "Express.js",
+      "React",
+      "MongoDB",
+      "JWT",
+      "BtterAuth",
+      "HeroUI",
+    ],
+    category: "frontend",
+    github: "https://github.com/mehedi-hasan2006/drive-fleet-client",
+    live: "https://drivee-fleet.vercel.app/",
+    role: "Full Stack Developer",
+  },
+  {
     id: "1",
     title: "Online Book Browing Platform",
     description:
@@ -372,7 +393,7 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  
+
                   {/* View Details  */}
                   <Link
                     href={`/projects/${project.id}`}

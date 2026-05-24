@@ -299,7 +299,6 @@ const Hero = () => {
                 "🚀 MERN Stack Developer",
                 "⚛️ React Enthusiast",
                 "💡 Open Source Lover",
-                
               ].map((tag, index) => (
                 <motion.span
                   key={tag}
@@ -326,16 +325,20 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 w-full sm:w-auto"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-purple-500/25"
+              <a
+                href="https://drive.google.com/file/d/1Pclr6-K1DCioUK_8uaKxnaj-OFu4LjGp/view?usp=sharing"
+                target="_blank"
               >
-                <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
-                Download Resume
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group cursor-pointer flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-purple-500/25"
+                >
+                  <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                  Download Resume
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

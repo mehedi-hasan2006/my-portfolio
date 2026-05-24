@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FaGithub, 
-  FaReact, 
-  FaNodeJs, 
-  FaDatabase, 
+import {
+  FaGithub,
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
   FaLaptopCode,
   FaPaintBrush,
   FaGlobe,
@@ -33,12 +33,12 @@ import {
   FaSpinner,
   FaSmile,
 } from "react-icons/fa";
-import { 
-  SiTypescript, 
-  SiTailwindcss, 
-  SiMongodb, 
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiMongodb,
   SiExpress,
-  SiNextdotjs
+  SiNextdotjs,
 } from "react-icons/si";
 import { useState } from "react";
 
@@ -211,13 +211,15 @@ export default function AboutMe() {
   const workPreferences = [
     {
       type: "Full-Stack Development",
-      description: "Building complete web applications from frontend to backend",
+      description:
+        "Building complete web applications from frontend to backend",
       icon: FaLaptopCode,
       color: "text-blue-500",
     },
     {
       type: "Frontend Magic",
-      description: "Creating beautiful, responsive, and interactive user interfaces",
+      description:
+        "Creating beautiful, responsive, and interactive user interfaces",
       icon: FaPaintBrush,
       color: "text-pink-500",
     },
@@ -241,7 +243,8 @@ export default function AboutMe() {
     },
     {
       type: "Open Source",
-      description: "Contributing to community projects and learning from others",
+      description:
+        "Contributing to community projects and learning from others",
       icon: FaGithub,
       color: "text-gray-700 dark:text-gray-400",
     },
@@ -295,21 +298,55 @@ export default function AboutMe() {
 
   // Personality traits
   const personalityTraits = [
-    { trait: "Curious", description: "Always eager to learn new things", icon: FaMagic },
-    { trait: "Detail-oriented", description: "Pixel-perfect and clean code", icon: FaBullseye },
-    { trait: "Creative", description: "Think outside the box", icon: FaPaintBrush },
-    { trait: "Collaborative", description: "Love working in teams", icon: FaUser },
-    { trait: "Resilient", description: "Never give up on challenges", icon: FaBolt },
+    {
+      trait: "Curious",
+      description: "Always eager to learn new things",
+      icon: FaMagic,
+    },
+    {
+      trait: "Detail-oriented",
+      description: "Pixel-perfect and clean code",
+      icon: FaBullseye,
+    },
+    {
+      trait: "Creative",
+      description: "Think outside the box",
+      icon: FaPaintBrush,
+    },
+    {
+      trait: "Collaborative",
+      description: "Love working in teams",
+      icon: FaUser,
+    },
+    {
+      trait: "Resilient",
+      description: "Never give up on challenges",
+      icon: FaBolt,
+    },
     { trait: "Passionate", description: "Code with heart", icon: FaHeart },
-    { trait: "Innovative", description: "Always seeking better solutions", icon: FaRocket },
-    { trait: "Adaptable", description: "Quick to learn new technologies", icon: FaSmile },
+    {
+      trait: "Innovative",
+      description: "Always seeking better solutions",
+      icon: FaRocket,
+    },
+    {
+      trait: "Adaptable",
+      description: "Quick to learn new technologies",
+      icon: FaSmile,
+    },
   ];
 
   // Fun facts
   const funFacts = [
-    { fact: "I once debugged a code for 2 hours only to find a missing semicolon! 🔍", emoji: "😅" },
+    {
+      fact: "I once debugged a code for 2 hours only to find a missing semicolon! 🔍",
+      emoji: "😅",
+    },
     { fact: "I drink 4+ cups of coffee while coding ☕", emoji: "☕" },
-    { fact: "My first computer had 2GB RAM - still coded like a pro! 💻", emoji: "🚀" },
+    {
+      fact: "My first computer had 2GB RAM - still coded like a pro! 💻",
+      emoji: "🚀",
+    },
     { fact: "I can type 100+ words per minute ⌨️", emoji: "⚡" },
     { fact: "I've helped 50+ developers learn coding 👨‍🏫", emoji: "🎓" },
     { fact: "I dream in JavaScript sometimes 💭", emoji: "💭" },
@@ -338,7 +375,10 @@ export default function AboutMe() {
       </div>
 
       {/* Section Header */}
-      <motion.div variants={itemVariants} className="text-center mb-16 relative z-10">
+      <motion.div
+        variants={itemVariants}
+        className="text-center mb-16 relative z-10"
+      >
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 px-5 py-2 rounded-full mb-4 shadow-sm">
           <FaMagic className="w-4 h-4 text-purple-600 dark:text-purple-400" />
           <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
@@ -365,7 +405,7 @@ export default function AboutMe() {
               {/* Animated Gradient Border */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl rotate-6 group-hover:rotate-3 transition-all duration-500 opacity-75 group-hover:opacity-100"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl -rotate-3 group-hover:-rotate-6 transition-all duration-500 opacity-75 group-hover:opacity-100"></div>
-              
+
               {/* Image Container */}
               <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl mb-10">
                 <img
@@ -376,7 +416,7 @@ export default function AboutMe() {
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              
+
               {/* Online Status Badge */}
               {/* <div className="absolute bottom-2 right-2 flex items-center gap-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -400,11 +440,15 @@ export default function AboutMe() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="text-center p-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-2xl mb-2">{stat.value.includes('☕') ? stat.value : 
-                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {stat.value}
-                  </span>
-                }</div>
+                <div className="text-2xl mb-2">
+                  {stat.value.includes("☕") ? (
+                    stat.value
+                  ) : (
+                    <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      {stat.value}
+                    </span>
+                  )}
+                </div>
                 <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">
                   {stat.label}
                 </p>
@@ -460,10 +504,12 @@ export default function AboutMe() {
               </span>
             </h3>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              A passionate Computer Science student and MERN Stack Developer from Bangladesh. 
-              My coding journey started with curiosity and turned into a lifelong passion. 
-              I love building things that live on the internet and solving real-world problems through code. 
-              Every line of code I write is a step towards making the digital world better.
+              A passionate Computer Science student and MERN Stack Developer
+              from Bangladesh. My coding journey started with curiosity and
+              turned into a lifelong passion. I love building things that live
+              on the internet and solving real-world problems through code.
+              Every line of code I write is a step towards making the digital
+              world better.
             </p>
           </div>
 
@@ -568,7 +614,9 @@ export default function AboutMe() {
                   className={`p-4 rounded-xl border ${item.border} ${item.bg} transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer`}
                 >
                   <div className="flex items-start gap-3">
-                    <div className={`p-2 rounded-lg ${item.bg} group-hover:scale-110 transition-transform`}>
+                    <div
+                      className={`p-2 rounded-lg ${item.bg} group-hover:scale-110 transition-transform`}
+                    >
                       <IconComponent className={`w-5 h-5 ${item.color}`} />
                     </div>
                     <div>
@@ -646,7 +694,9 @@ export default function AboutMe() {
                 ></div>
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="text-3xl animate-bounce group-hover:animate-none">{hobby.emoji}</div>
+                    <div className="text-3xl animate-bounce group-hover:animate-none">
+                      {hobby.emoji}
+                    </div>
                     <IconComponent
                       className={`w-5 h-5 ${hobby.color.split(" ")[0]}`}
                     />
@@ -681,7 +731,10 @@ export default function AboutMe() {
                     <FaCoffee className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 font-medium">
-                    <span className="font-bold text-purple-600 dark:text-purple-400">✨ Fun Corner:</span> Click to discover something about me!
+                    <span className="font-bold text-purple-600 dark:text-purple-400">
+                      ✨ Fun Corner:
+                    </span>{" "}
+                    Click to discover something about me!
                   </p>
                 </div>
                 <FaArrowRight
@@ -718,7 +771,8 @@ export default function AboutMe() {
                     </button>
                   </div>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
-                    Tap the button above to close • {currentFunFact + 1}/{funFacts.length} facts
+                    Tap the button above to close • {currentFunFact + 1}/
+                    {funFacts.length} facts
                   </p>
                 </div>
               </motion.div>
@@ -728,10 +782,14 @@ export default function AboutMe() {
       </motion.div>
 
       {/* Call to Action - Enhanced */}
-      <motion.div variants={itemVariants} className="mt-12 text-center relative z-10">
+      <motion.div
+        variants={itemVariants}
+        className="mt-12 text-center relative z-10"
+      >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <motion.a
-            href="#"
+            href="https://drive.google.com/file/d/1Pclr6-K1DCioUK_8uaKxnaj-OFu4LjGp/view?usp=sharing"
+            target="_blank"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-xl overflow-hidden"
@@ -760,10 +818,18 @@ export default function AboutMe() {
       {/* Add custom CSS for animations */}
       <style jsx>{`
         @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
         }
         .animate-blob {
           animation: blob 7s infinite;
@@ -775,9 +841,15 @@ export default function AboutMe() {
           animation-delay: 4s;
         }
         @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
         .animate-gradient {
           background-size: 200% auto;

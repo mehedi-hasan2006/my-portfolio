@@ -369,7 +369,7 @@ export default function AboutMe() {
               {/* Image Container */}
               <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl mb-10">
                 <img
-                  src="https://i.ibb.co.com/LXmbnFRJ/mehedi-port2.png"
+                  src="https://i.ibb.co.com/nM1HgmYQ/IMG-20260524-180509.png"
                   alt="MD. Mehedi Hasan"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

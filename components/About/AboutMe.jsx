@@ -407,11 +407,11 @@ export default function AboutMe() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl -rotate-3 group-hover:-rotate-6 transition-all duration-500 opacity-75 group-hover:opacity-100"></div>
 
               {/* Image Container */}
-              <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl mb-10">
+              <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl mb-10 w-80 h-80">
                 <img
                   src="https://i.ibb.co.com/nM1HgmYQ/IMG-20260524-180509.png"
                   alt="MD. Mehedi Hasan"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className=" object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

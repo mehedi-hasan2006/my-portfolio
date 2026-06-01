@@ -14,19 +14,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io";
 import { VscVscode } from "react-icons/vsc";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Server,
-  Database,
-  Sparkles,
-  Zap,
-  Star,
-  Trophy,
-  Target,
-  Layers,
-  Wrench,
-} from "lucide-react";
-import { useState } from "react";
+import { Code2, Server, Database, Sparkles, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
@@ -140,33 +128,6 @@ const skillCategories = [
   },
 ];
 
-const expertiseLevels = [
-  {
-    level: "Expert",
-    icon: Trophy,
-    color: "text-yellow-500",
-    bg: "bg-yellow-100 dark:bg-yellow-900/30",
-  },
-  {
-    level: "Advanced",
-    icon: Star,
-    color: "text-blue-500",
-    bg: "bg-blue-100 dark:bg-blue-900/30",
-  },
-  {
-    level: "Intermediate",
-    icon: Target,
-    color: "text-green-500",
-    bg: "bg-green-100 dark:bg-green-900/30",
-  },
-  {
-    level: "Beginner",
-    icon: Zap,
-    color: "text-gray-500",
-    bg: "bg-gray-100 dark:bg-gray-800",
-  },
-];
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -184,32 +145,7 @@ const itemVariants = {
   },
 };
 
-const skillCardVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { type: "spring", stiffness: 200, damping: 15 },
-  },
-};
-
 export default function Skills() {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [hoveredSkill, setHoveredSkill] = useState(null);
-
-  const allSkills = skillCategories.flatMap((cat) =>
-    cat.skills.map((skill) => ({
-      ...skill,
-      categoryId: cat.id,
-      categoryTitle: cat.title,
-    })),
-  );
-
-  const filteredSkills =
-    activeCategory === "all"
-      ? allSkills
-      : allSkills.filter((skill) => skill.categoryId === activeCategory);
-
   return (
     <section
       className="relative bg-white dark:bg-gray-950 py-16 lg:py-24 overflow-hidden"
@@ -241,118 +177,19 @@ export default function Skills() {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 px-4 py-2 rounded-full mb-6 border border-blue-200 dark:border-blue-800"
+            className="inline-flex items-center gap-2 bg-linear-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 px-4 py-2 rounded-full mb-6 border border-blue-200 dark:border-blue-800"
           >
             <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
               Tech Stack
             </span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-gray-900 via-blue-800 to-gray-900 dark:from-white dark:via-blue-300 dark:to-white bg-clip-text text-transparent mb-4">
             Skills & Expertise
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Technologies and tools I use to build amazing digital experiences
           </p>
-        </motion.div>
-
-        {/* Legend */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
-        >
-          {expertiseLevels.map((level) => {
-            const IconComponent = level.icon;
-            return (
-              <div
-                key={level.level}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium ${level.bg} ${level.color}`}
-              >
-                <IconComponent className="w-3.5 h-3.5" />
-                {level.level}
-              </div>
-            );
-          })}
-        </motion.div> */}
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {[
-            { id: "all", label: "All Skills", icon: Layers },
-            ...skillCategories.map((cat) => ({
-              id: cat.id,
-              label: cat.title,
-              icon: cat.icon,
-            })),
-          ].map((filter) => {
-            const IconComponent = filter.icon;
-            const isActive = activeCategory === filter.id;
-            return (
-              <motion.button
-                key={filter.id}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveCategory(filter.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  isActive
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-500/25"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500"
-                }`}
-              >
-                <IconComponent className="w-4 h-4" />
-                {filter.label}
-              </motion.button>
-            );
-          })}
-        </div>
-
-        {/* Skills Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
-        >
-          {filteredSkills.map((skill, index) => (
-            <motion.div
-              key={`${skill.name}-${skill.categoryId}`}
-              layout
-              variants={skillCardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              onHoverStart={() => setHoveredSkill(skill.name)}
-              onHoverEnd={() => setHoveredSkill(null)}
-              className="group relative bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 rounded-xl p-4 text-center hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl transition-all duration-300 cursor-default"
-            >
-              {/* Skill Icon */}
-              <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                {skill.icon}
-              </div>
-
-              {/* Skill Name */}
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
-                {skill.name}
-              </h3>
-
-              {/* Category */}
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-                {skill.category}
-              </p>
-
-              {/* Expertise Level Badge */}
-              <span
-                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
-                  expertiseLevels.find((l) => l.level === skill.level)?.bg
-                } ${expertiseLevels.find((l) => l.level === skill.level)?.color}`}
-              >
-                {skill.level}
-              </span>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </motion.div>
-          ))}
         </motion.div>
 
         {/* Category Cards (Detailed View) */}

@@ -107,12 +107,6 @@ export default function AboutMe() {
       color: "text-orange-500",
       bg: "bg-orange-100 dark:bg-orange-900/30",
     },
-    // {
-    //   name: "TypeScript",
-    //   icon: SiTypescript,
-    //   color: "text-blue-600",
-    //   bg: "bg-blue-100 dark:bg-blue-900/30",
-    // },
     {
       name: "Tailwind",
       icon: SiTailwindcss,
@@ -143,7 +137,7 @@ export default function AboutMe() {
     },
     {
       year: 2024,
-      title: "Python & Backend Discovery",
+      title: "Exploring Python",
       description: "Diving into Python and exploring backend concepts",
       icon: FaRocket,
       color: "from-blue-500 to-cyan-500",
@@ -363,12 +357,12 @@ export default function AboutMe() {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className="mx-auto container px-4 py-16 lg:py-24"
+      viewport={{ once: true, amount: 0.1 }}
+      className="mx-auto container px-4 py-8 sm:py-12 lg:py-24 relative"
       id="about"
     >
       {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
@@ -377,58 +371,50 @@ export default function AboutMe() {
       {/* Section Header */}
       <motion.div
         variants={itemVariants}
-        className="text-center mb-16 relative z-10"
+        className="text-center mb-8 sm:mb-12 lg:mb-16 relative z-10"
       >
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 px-5 py-2 rounded-full mb-4 shadow-sm">
-          <FaMagic className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-          <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4 shadow-sm">
+          <FaMagic className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600 dark:text-purple-400" />
+          <span className="text-xs sm:text-sm font-medium text-purple-600 dark:text-purple-400">
             Get to know me
           </span>
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
           <span className="bg-gradient-to-r from-gray-900 via-purple-800 to-pink-800 dark:from-white dark:via-purple-300 dark:to-pink-300 bg-clip-text text-transparent">
             About Me
           </span>
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-2">
           Developer by day, creator by night — passionate about building
           meaningful digital experiences that make a difference
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 relative z-10">
         {/* Left Column - Image & Quick Info */}
-        <motion.div variants={itemVariants} className="space-y-6">
+        <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
           {/* Profile Image with Enhanced Design */}
           <div className="relative group">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 mx-auto">
               {/* Animated Gradient Border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl rotate-6 group-hover:rotate-3 transition-all duration-500 opacity-75 group-hover:opacity-100"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl -rotate-3 group-hover:-rotate-6 transition-all duration-500 opacity-75 group-hover:opacity-100"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl rotate-6 group-hover:rotate-3 transition-all duration-500 opacity-75 group-hover:opacity-100 blur-sm"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl -rotate-3 group-hover:-rotate-6 transition-all duration-500 opacity-75 group-hover:opacity-100 blur-sm"></div>
 
               {/* Image Container */}
-              <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl mb-10 w-80 h-80">
+              <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl w-full h-full">
                 <img
                   src="https://i.ibb.co.com/nM1HgmYQ/IMG-20260524-180509.png"
                   alt="MD. Mehedi Hasan"
-                  className=" object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-
-              {/* Online Status Badge */}
-              {/* <div className="absolute bottom-2 right-2 flex items-center gap-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
-                  Available for work
-                </span>
-              </div> */}
             </div>
           </div>
 
           {/* Quick Stats with Enhanced Design */}
-          <div className="grid grid-cols-3 gap-4 mt-10">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6">
             {[
               { label: "Experience", value: "2+ Years", icon: FaCode },
               { label: "Projects", value: "15+", icon: FaRocket },
@@ -438,18 +424,18 @@ export default function AboutMe() {
                 key={stat.label}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center p-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center p-3 sm:p-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-2xl mb-2">
+                <div className="text-lg sm:text-2xl mb-1 sm:mb-2">
                   {stat.value.includes("☕") ? (
                     stat.value
                   ) : (
-                    <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <span className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                       {stat.value}
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-gray-600 dark:text-gray-400 font-medium">
+                <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium">
                   {stat.label}
                 </p>
               </motion.div>
@@ -459,13 +445,13 @@ export default function AboutMe() {
           {/* Personality Section - Enhanced */}
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-linear-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <FaStar className="w-5 h-5 text-yellow-500" />
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center gap-2">
+              <FaStar className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500" />
               My Personality
             </h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 xs:grid-cols-2 gap-2 sm:gap-3">
               {personalityTraits.map((trait, idx) => {
                 const IconComponent = trait.icon;
                 return (
@@ -477,12 +463,12 @@ export default function AboutMe() {
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center gap-2 p-2 rounded-lg bg-white dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-all"
                   >
-                    <IconComponent className="w-4 h-4 text-purple-500" />
-                    <div>
-                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                    <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-500 shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white">
                         {trait.trait}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">
                         {trait.description}
                       </p>
                     </div>
@@ -494,16 +480,16 @@ export default function AboutMe() {
         </motion.div>
 
         {/* Right Column - Content */}
-        <motion.div variants={itemVariants} className="space-y-6">
+        <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
           {/* Introduction with Enhanced Typography */}
-          <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-lg">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+          <div className="bg-linear-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-lg">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
               Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
                 Md. Mehedi Hasan
               </span>
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               A passionate Computer Science student and MERN Stack Developer
               from Bangladesh. My coding journey started with curiosity and
               turned into a lifelong passion. I love building things that live
@@ -515,13 +501,13 @@ export default function AboutMe() {
 
           {/* Programming Journey Timeline - Enhanced */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-              <FaClock className="w-5 h-5 text-blue-500" />
+            <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center gap-2">
+              <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
               My Programming Journey
             </h4>
             <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500"></div>
-              <div className="space-y-4">
+              <div className="absolute left-3 sm:left-4 top-0 bottom-0 w-0.5 bg-linear-to-b from-blue-500 via-purple-500 to-pink-500"></div>
+              <div className="space-y-3 sm:space-y-4">
                 {programmingJourney.map((item, index) => {
                   const IconComponent = item.icon;
                   return (
@@ -530,30 +516,30 @@ export default function AboutMe() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="relative pl-12"
+                      className="relative pl-10 sm:pl-12"
                     >
                       <div
-                        className={`absolute left-0 top-1 w-8 h-8 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
+                        className={`absolute left-0 top-1 w-6 h-6 sm:w-8 sm:h-8 bg-linear-to-r ${item.color} rounded-full flex items-center justify-center shadow-lg`}
                       >
-                        <IconComponent className="w-4 h-4 text-white" />
+                        <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                       </div>
-                      <div className="bg-white dark:bg-gray-800/50 rounded-xl p-4 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                      <div className="bg-white dark:bg-gray-800/50 rounded-xl p-3 sm:p-4 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group">
                         <div className="flex items-center justify-between mb-2">
-                          <h5 className="font-semibold text-gray-900 dark:text-white">
+                          <h5 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white">
                             {item.title}
                           </h5>
-                          <span className="text-xs font-mono bg-gradient-to-r from-blue-500 to-purple-500 text-white px-2 py-1 rounded-full">
+                          <span className="text-[10px] sm:text-xs font-mono bg-linear-to-r from-blue-500 to-purple-500 text-white px-2 py-0.5 sm:py-1 rounded-full ml-2 shrink-0">
                             {item.year}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2">
                           {item.description}
                         </p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {item.achievements.map((achievement, idx) => (
                             <span
                               key={idx}
-                              className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full"
+                              className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full"
                             >
                               ✓ {achievement}
                             </span>
@@ -569,11 +555,11 @@ export default function AboutMe() {
 
           {/* Skills Section - Enhanced */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-              <FaCode className="w-5 h-5 text-purple-500" />
+            <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+              <FaCode className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
               Technologies I Work With
             </h4>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {skills.map((skill, index) => {
                 const IconComponent = skill.icon;
                 return (
@@ -581,10 +567,12 @@ export default function AboutMe() {
                     key={skill.name}
                     variants={skillIconVariants}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg ${skill.bg} border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer`}
+                    className={`flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg ${skill.bg} border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer`}
                   >
-                    <IconComponent className={`w-4 h-4 ${skill.color}`} />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <IconComponent
+                      className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${skill.color}`}
+                    />
+                    <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
                       {skill.name}
                     </span>
                   </motion.div>
@@ -596,14 +584,14 @@ export default function AboutMe() {
       </div>
 
       {/* Highlights & Work Preferences Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12 relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mt-8 sm:mt-12 relative z-10">
         {/* Highlights Grid */}
         <div>
-          <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center justify-center lg:justify-start gap-2">
-            <FaStar className="w-6 h-6 text-yellow-500" />
+          <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center justify-center lg:justify-start gap-2">
+            <FaStar className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
             Personal Highlights
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4">
             {highlights.map((item, index) => {
               const IconComponent = item.icon;
               return (
@@ -611,22 +599,24 @@ export default function AboutMe() {
                   key={item.title}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className={`p-4 rounded-xl border ${item.border} ${item.bg} transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer`}
+                  className={`p-3 sm:p-4 rounded-xl border ${item.border} ${item.bg} transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer`}
                 >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={`p-2 rounded-lg ${item.bg} group-hover:scale-110 transition-transform`}
-                    >
-                      <IconComponent className={`w-5 h-5 ${item.color}`} />
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <div className={`p-1.5 sm:p-2 rounded-lg ${item.bg}`}>
+                      <IconComponent
+                        className={`w-4 h-4 sm:w-5 sm:h-5 ${item.color}`}
+                      />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-sm">
+                      <h4 className="font-semibold text-xs sm:text-sm text-gray-900 dark:text-white">
                         {item.title}
                       </h4>
-                      <p className={`text-sm font-medium ${item.color}`}>
+                      <p
+                        className={`text-xs sm:text-sm font-medium ${item.color}`}
+                      >
                         {item.description}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 mt-0.5 sm:mt-1">
                         {item.details}
                       </p>
                     </div>
@@ -639,11 +629,11 @@ export default function AboutMe() {
 
         {/* Work Preferences */}
         <div>
-          <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center lg:text-left flex items-center justify-center lg:justify-start gap-2">
-            <FaBriefcase className="w-6 h-6 text-purple-500" />
+          <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 text-center lg:text-left flex items-center justify-center lg:justify-start gap-2">
+            <FaBriefcase className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500" />
             Work I Enjoy
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4">
             {workPreferences.map((work, index) => {
               const IconComponent = work.icon;
               return (
@@ -651,17 +641,19 @@ export default function AboutMe() {
                   key={work.type}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="group p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer"
+                  className="group p-3 sm:p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 group-hover:scale-110 transition-transform">
-                      <IconComponent className={`w-5 h-5 ${work.color}`} />
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <div className="p-1.5 sm:p-2 rounded-lg bg-linear-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30">
+                      <IconComponent
+                        className={`w-4 h-4 sm:w-5 sm:h-5 ${work.color}`}
+                      />
                     </div>
-                    <div className="flex-1">
-                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-1">
+                    <div className="flex-1 min-w-0">
+                      <h5 className="font-semibold text-xs sm:text-sm text-gray-900 dark:text-white mb-0.5 sm:mb-1">
                         {work.type}
                       </h5>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                         {work.description}
                       </p>
                     </div>
@@ -674,12 +666,15 @@ export default function AboutMe() {
       </div>
 
       {/* Hobbies & Interests Section - Enhanced */}
-      <motion.div variants={itemVariants} className="mt-12 relative z-10">
-        <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center flex items-center justify-center gap-2">
-          <FaHeart className="w-6 h-6 text-red-500 animate-pulse" />
+      <motion.div
+        variants={itemVariants}
+        className="mt-8 sm:mt-12 relative z-10"
+      >
+        <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 text-center flex items-center justify-center gap-2">
+          <FaHeart className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 animate-pulse" />
           Beyond the Code - My Hobbies
         </h4>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {hobbies.map((hobby, index) => {
             const IconComponent = hobby.icon;
             return (
@@ -687,24 +682,22 @@ export default function AboutMe() {
                 key={hobby.name}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="relative group overflow-hidden p-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="relative group overflow-hidden p-3 sm:p-4 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-800/30 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-r ${hobby.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-linear-to-r ${hobby.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 ></div>
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="text-3xl animate-bounce group-hover:animate-none">
-                      {hobby.emoji}
-                    </div>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
+                    <div className="text-2xl sm:text-3xl">{hobby.emoji}</div>
                     <IconComponent
-                      className={`w-5 h-5 ${hobby.color.split(" ")[0]}`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 ${hobby.color.split(" ")[0]}`}
                     />
-                    <h5 className="font-semibold text-gray-900 dark:text-white">
+                    <h5 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white">
                       {hobby.name}
                     </h5>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 ml-12">
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 ml-10 sm:ml-12">
                     {hobby.description}
                   </p>
                 </div>
@@ -715,7 +708,10 @@ export default function AboutMe() {
       </motion.div>
 
       {/* Fun Facts Section - Interactive Enhanced */}
-      <motion.div variants={itemVariants} className="mt-12 relative z-10">
+      <motion.div
+        variants={itemVariants}
+        className="mt-8 sm:mt-12 relative z-10"
+      >
         <div className="relative">
           <button
             onClick={() => {
@@ -724,13 +720,13 @@ export default function AboutMe() {
             }}
             className="w-full group"
           >
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 px-6 py-5 rounded-2xl border border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all duration-300">
+            <div className="bg-linear-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 px-4 sm:px-6 py-3 sm:py-5 rounded-2xl border border-purple-200 dark:border-purple-800 hover:shadow-xl transition-all duration-300">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full group-hover:rotate-12 transition-transform duration-300">
-                    <FaCoffee className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 bg-linear-to-r from-purple-500 to-pink-500 rounded-full">
+                    <FaCoffee className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 font-medium">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
                     <span className="font-bold text-purple-600 dark:text-purple-400">
                       ✨ Fun Corner:
                     </span>{" "}
@@ -738,7 +734,7 @@ export default function AboutMe() {
                   </p>
                 </div>
                 <FaArrowRight
-                  className={`w-5 h-5 text-purple-500 transition-all duration-300 ${showFunFact ? "rotate-90" : "group-hover:translate-x-1"}`}
+                  className={`w-4 h-4 sm:w-5 sm:h-5 text-purple-500 transition-all duration-300 shrink-0 ${showFunFact ? "rotate-90" : "group-hover:translate-x-1"}`}
                 />
               </div>
             </div>
@@ -752,25 +748,25 @@ export default function AboutMe() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="mt-4 p-6 bg-gradient-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 shadow-xl"
+                className="mt-3 sm:mt-4 p-4 sm:p-6 bg-linear-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 shadow-xl"
               >
                 <div className="text-center">
-                  <div className="inline-block p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mb-3 shadow-lg">
-                    <FaSmile className="w-6 h-6 text-white" />
+                  <div className="inline-block p-2 sm:p-3 bg-linear-to-r from-yellow-500 to-orange-500 rounded-full mb-2 sm:mb-3 shadow-lg">
+                    <FaSmile className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <p className="text-lg font-medium text-gray-900 dark:text-white mb-3">
+                  <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-2 sm:mb-3">
                     {funFacts[currentFunFact].fact}
                   </p>
                   <div className="flex items-center justify-center gap-2">
                     <button
                       onClick={nextFunFact}
-                      className="text-sm px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-all duration-300 flex items-center gap-2"
+                      className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-all duration-300 flex items-center gap-1.5 sm:gap-2"
                     >
                       <FaSpinner className="w-3 h-3 animate-spin" />
                       Next Fun Fact
                     </button>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
+                  <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 mt-2 sm:mt-3">
                     Tap the button above to close • {currentFunFact + 1}/
                     {funFacts.length} facts
                   </p>
@@ -784,19 +780,19 @@ export default function AboutMe() {
       {/* Call to Action - Enhanced */}
       <motion.div
         variants={itemVariants}
-        className="mt-12 text-center relative z-10"
+        className="mt-8 sm:mt-12 text-center relative z-10"
       >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <motion.a
             href="https://drive.google.com/file/d/1Pclr6-K1DCioUK_8uaKxnaj-OFu4LjGp/view?usp=sharing"
             target="_blank"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-xl overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-xl overflow-hidden text-sm sm:text-base"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 flex items-center gap-2">
-              <FaDownload className="w-5 h-5" />
+              <FaDownload className="w-4 h-4 sm:w-5 sm:h-5" />
               Download Resume
             </span>
           </motion.a>
@@ -804,19 +800,19 @@ export default function AboutMe() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-3 px-8 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl overflow-hidden text-sm sm:text-base"
           >
             <span className="relative z-10 flex items-center gap-2">
-              <FaEnvelope className="w-5 h-5" />
+              <FaEnvelope className="w-4 h-4 sm:w-5 sm:h-5" />
               Get in Touch
-              <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </motion.a>
         </div>
       </motion.div>
 
-      {/* Add custom CSS for animations */}
-      <style jsx>{`
+      {/* Global styles for animations */}
+      <style jsx global>{`
         @keyframes blob {
           0% {
             transform: translate(0px, 0px) scale(1);
@@ -854,6 +850,13 @@ export default function AboutMe() {
         .animate-gradient {
           background-size: 200% auto;
           animation: gradient 3s linear infinite;
+        }
+
+        /* Custom breakpoint for very small devices */
+        @media (min-width: 480px) {
+          .xs\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
         }
       `}</style>
     </motion.section>

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { MdContactPhone } from "react-icons/md";
+import { MdContactPhone, MdOutlineArticle } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../public/logo.png";
 import {
@@ -62,6 +62,14 @@ const menuItems = [
     gradient:
       "radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(8,145,178,0.06) 50%, rgba(14,116,144,0) 100%)",
     iconColor: "group-hover:text-cyan-500 dark:group-hover:text-cyan-400",
+  },
+  {
+    icon: <MdOutlineArticle className="h-5 w-5" />,
+    label: "Blog",
+    href: "/blog",
+    gradient:
+      "radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(8,145,178,0.06) 50%, rgba(14,116,144,0) 100%)",
+    iconColor: "group-hover:text-purple-500 dark:group-hover:text-purple-400",
   },
 ];
 

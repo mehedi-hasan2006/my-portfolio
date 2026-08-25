@@ -150,7 +150,7 @@ const Login = () => {
         {
           email,
           password,
-          callbackURL: "/dashboard",
+          callbackURL: "/admin/dashboard",
         },
         {
           onSuccess: (res) => {
@@ -163,7 +163,7 @@ const Login = () => {
           },
         },
       );
-      console.log({ data, error });
+    //   console.log({ data, error });
     } catch (err) {
       console.error("Unexpected error during login:", err);
       toast.error("An unexpected error occurred. Please try again.");

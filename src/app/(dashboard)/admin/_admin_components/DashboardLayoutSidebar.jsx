@@ -8,6 +8,7 @@ import {
   House,
   Plus,
   FileText,
+  ChartColumnStacked
 } from "@gravity-ui/icons";
 import { Avatar, Button, Drawer } from "@heroui/react";
 import { Book, DollarSign, icons, List, User } from "lucide-react";
@@ -18,12 +19,13 @@ export function DashboardLayoutSidebar({ user }) {
   const pathname = usePathname();
 
   const dashboardItems = [
-    { icon: House, label: "Dashboard", href: "/admin/dashboard" },
+    { icon: ChartColumnStacked, label: "Dashboard", href: "/admin/dashboard" },
     { icon: House, label: "Home", href: "/" },
     { icon: Plus, label: "Add Blog Post", href: "/admin/add-blog-post" },
-    { icon: List, label: "Blog Posts", href: "/admin/blog-posts" },
+    { icon: List, label: "Blog Posts", href: "/admin/blog-list" },
     { icon: Plus, label: "Add Project", href: "/admin/add-project" },
-    { icon: List, label: "Projects", href: "/admin/projects" },
+    { icon: List, label: "Projects", href: "/admin/project-list" },
+
   ];
 
 

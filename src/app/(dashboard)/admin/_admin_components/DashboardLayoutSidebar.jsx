@@ -14,45 +14,19 @@ import { Book, DollarSign, icons, List, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function Sidebar({ user }) {
+export function DashboardLayoutSidebar({ user }) {
   const pathname = usePathname();
 
-  const dashboardItems = {
-    member: [
-      { icon: House, label: "Home", href: "/member/dashboard" },
-      { icon: List, label: "Applications", href: "/member/application" },
-      { icon: List, label: "Booked Classes", href: "/member/booked-classes" },
-      {
-        icon: List,
-        label: "Favorite Classes",
-        href: "/member/favorite-classes",
-      },
-    ],
-    trainner: [
-      { icon: House, label: "Home", href: "/trainner/dashboard" },
-      { icon: Plus, label: "Add Class", href: "/trainner/add-class" },
-      { icon: Book, label: "My Classes", href: "/trainner/my-classes" },
-      { icon: Plus, label: "Add Community Post", href: "/add-community-post" },
-      { icon: List, label: " Community Post", href: "/community-post" },
-    ],
-    admin: [
-      { icon: House, label: "Home", href: "/admin/dashboard" },
-      { icon: Book, label: "All Classes", href: "/admin/classes" },
-      { icon: Plus, label: "Add Post", href: "/add-community-post" },
-      { icon: List, label: " Community Post", href: "/community-post" },
-      { icon: List, label: "Manage Applications", href: "/admin/applications" },
-      {
-        icon: List,
-        label: "Manage Trainners",
-        href: "/admin/manage-trainners",
-      },
-      { icon: List, label: "Manage Posts", href: "/admin/manage-posts" },
-      { icon: DollarSign, label: "Transaction", href: "/admin/transactions" },
-      { icon: User, label: "Mange Users", href: "/admin/users" },
-    ],
-  };
+  const dashboardItems = [
+    { icon: House, label: "Dashboard", href: "/admin/dashboard" },
+    { icon: House, label: "Home", href: "/" },
+    { icon: Plus, label: "Add Blog Post", href: "/admin/add-blog-post" },
+    { icon: List, label: "Blog Posts", href: "/admin/blog-posts" },
+    { icon: Plus, label: "Add Project", href: "/admin/add-project" },
+    { icon: List, label: "Projects", href: "/admin/projects" },
+  ];
 
-  const navItems = dashboardItems[user?.role] ?? "member";
+
 
   const userCard = (
     <div className="flex flex-col items-center gap-3 px-3 py-2.5 rounded-xl  border border-zinc-800/50 backdrop-blur-sm">
@@ -84,7 +58,7 @@ export function Sidebar({ user }) {
 
   const menu = (
     <nav className="flex flex-col gap-1">
-      {navItems.map((item) => {
+      {dashboardItems.map((item) => {
         const isActive = pathname === item.href;
 
         return (

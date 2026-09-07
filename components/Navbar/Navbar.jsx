@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   {
@@ -232,6 +233,7 @@ function DesktopMenuItem({ item }) {
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -242,6 +244,10 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  if (pathname.includes("/admin")) {
+    return null;
+  }
+  
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
   };

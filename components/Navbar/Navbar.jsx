@@ -67,7 +67,7 @@ const menuItems = [
   {
     icon: <MdOutlineArticle className="h-5 w-5" />,
     label: "Blog",
-    href: "/blog",
+    href: "/blogs",
     gradient:
       "radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(8,145,178,0.06) 50%, rgba(14,116,144,0) 100%)",
     iconColor: "group-hover:text-purple-500 dark:group-hover:text-purple-400",

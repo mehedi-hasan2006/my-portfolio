@@ -1,4 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Hind_Siliguri,
+  Inter,
+  Noto_Sans_Bengali,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -13,6 +19,23 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const hindSiliguri = Hind_Siliguri({
+  subsets: ["bengali", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-bangla-heading",
+});
+
+const notoSansBengali = Noto_Sans_Bengali({
+  subsets: ["bengali"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-bangla-body",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-english",
 });
 
 export const metadata = {
@@ -118,7 +141,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}  h-full antialiased`}
+      className={`${hindSiliguri.variable} ${notoSansBengali.variable} ${inter.variable}  h-full antialiased`}
     >
       <head>
         <StructuredData />

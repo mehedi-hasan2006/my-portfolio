@@ -1,4 +1,6 @@
-const API_URL = process.env.NEXT_SERVER_URL;
+const API_URL = process.env.NEXT_PUBLIC_SERVER_URL;
+
+
 
 export const defaultAPI = async (
   method = "GET",
@@ -7,7 +9,7 @@ export const defaultAPI = async (
   headers = {},
 ) => {
   try {
-    const res = await fetch(`${API_URL}/${path}`, {
+    const res = await fetch(`${API_URL}${path}`, {
       method,
       headers: {
         ...headers,
